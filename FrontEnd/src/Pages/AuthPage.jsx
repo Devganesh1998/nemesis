@@ -36,7 +36,7 @@ const AuthPage = ({
         if (isLoginError) {
             NotificationManager.error(loginErrorMessage || "", 'Error', 3000);
         }
-    }, [isLoginError]);
+    }, [isLoginError, loginErrorMessage]);
 
     useEffect(() => {
         if (isRegisterError) {
@@ -46,7 +46,7 @@ const AuthPage = ({
                 3000
             );
         }
-    }, [isRegisterError]);
+    }, [isRegisterError, registerErrorMessage]);
 
     return is_auth ? (
         <Redirect to="/" {...rest} />

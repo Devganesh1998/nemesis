@@ -50,7 +50,7 @@ const LoginForm = (props) => {
                             if (!value) {
                                 return Promise.resolve();
                             }
-                            const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                            const regexEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
                             if (value.match(regexEmail)) {
                                 return Promise.resolve();
                             }
