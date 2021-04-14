@@ -6,25 +6,25 @@ const thunk = (store) => (next) => (action) => {
   typeof action === "function" ? action(store.dispatch) : next(action);
 };
 
-const saveToLocalStorage = (state) => {
-  try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem("nemesisState", serializedState);
-  } catch (e) {
-    console.log(e);
-  }
-};
+// const saveToLocalStorage = (state) => {
+//   try {
+//     const serializedState = JSON.stringify(state);
+//     localStorage.setItem("nemesisState", serializedState);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
 
-const loadFromLocalStorage = () => {
-  try {
-    const serializedState = localStorage.getItem("nemesisState");
-    if (serializedState == null) return undefined;
-    return JSON.parse(serializedState);
-  } catch (e) {
-    console.log(e);
-    return undefined;
-  }
-};
+// const loadFromLocalStorage = () => {
+//   try {
+//     const serializedState = localStorage.getItem("nemesisState");
+//     if (serializedState == null) return undefined;
+//     return JSON.parse(serializedState);
+//   } catch (e) {
+//     console.log(e);
+//     return undefined;
+//   }
+// };
 
 const rootreducer = combineReducers({
   auth: authReducer,
@@ -40,11 +40,11 @@ if (process.env.NODE_ENV !== "production") {
 export default function configureStore() {
   const store = createStore(
     rootreducer,
-    loadFromLocalStorage(),
+    // loadFromLocalStorage(),
     composeEnhancers(applyMiddleware(thunk))
   );
   store.dispatch(verifyAuth());
-  store.subscribe(() => saveToLocalStorage(store.getState()));
+  // store.subscribe(() => saveToLocalStorage(store.getState()));
 
   return store;
 }

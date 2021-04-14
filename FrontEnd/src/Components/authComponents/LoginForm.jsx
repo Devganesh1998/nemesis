@@ -20,7 +20,6 @@ export const tailLayout = {
 const LoginForm = (props) => {
     const { loginUser } = props;
     const onFinish = (values) => {
-        console.log("Success:", values);
         loginUser(values);
     };
 

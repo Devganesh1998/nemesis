@@ -22,7 +22,6 @@ import { MailOutlined, PhoneOutlined, LockOutlined } from "@ant-design/icons";
 const RegisterForm = (props) => {
     const { registerUser } = props;
     const submit = (value) => {
-        console.log(value);
         registerUser(value);
     };
 

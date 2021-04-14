@@ -6,6 +6,7 @@ import "./index.css";
 import configureStore from "./Redux/configureStore";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import 'react-notifications/lib/notifications.css';
 
 const store = configureStore();
 
