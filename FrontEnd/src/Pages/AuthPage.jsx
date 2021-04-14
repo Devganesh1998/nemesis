@@ -28,14 +28,15 @@ const AuthPage = ({ loginUser, registerUser, is_auth, ...rest }) => {
             onChange={callback}
             activeKey={currTab}
             {...rest}
+            style={{ padding: '10px' }}
         >
             <TabPane tab="Login" key="login">
+                <LoginForm loginUser={loginUser} />
                 <div style={{ margin: "20px" }}>
-                    <h3>Demo EmailId and Password</h3>
-                    <h4>Email Id : test</h4>
+                    <h3 style={{ color: 'GrayText' }}>Demo EmailId and Password</h3>
+                    <h4>Email Id : test@test.com</h4>
                     <h4>Password : test</h4>
                 </div>
-                <LoginForm loginUser={loginUser} />
             </TabPane>
             <TabPane tab="Register" key="register">
                 <RegisterForm registerUser={registerUser} />
