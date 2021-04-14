@@ -1,0 +1,3 @@
+[submodule "BackEnd/NemesisFlaskServer"]
+	path = BackEnd/NemesisFlaskServer
+	url = https://github.com/Devganesh1998/NemesisFlaskServer.git
