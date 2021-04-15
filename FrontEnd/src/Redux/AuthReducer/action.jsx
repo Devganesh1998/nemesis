@@ -113,7 +113,10 @@ export const registerUser = (payload) => (dispatch) => {
         })
         .catch((err) => {
             console.error(err);
-            const { message = "", data: { errormsg = "" } = {} } = err || {};
+            const {
+                message = "",
+                response: { data: { errormsg = "" } = {} },
+            } = err || {};
             dispatch(registerFailure(errormsg || message));
         });
 };
